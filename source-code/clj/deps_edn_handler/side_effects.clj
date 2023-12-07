@@ -2,8 +2,8 @@
 (ns deps-edn-handler.side-effects
     (:require [deps-edn-handler.env   :as env]
               [deps-edn-handler.utils :as utils]
-              [io.api                 :as io]
-              [string.api             :as string]))
+              [fruits.string.api      :as string]
+              [io.api                 :as io]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------

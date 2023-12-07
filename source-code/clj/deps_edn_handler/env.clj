@@ -1,9 +1,9 @@
 
 (ns deps-edn-handler.env
     (:require [deps-edn-handler.utils :as utils]
-              [io.api                 :as io]
-              [map.api                :as map]
-              [string.api             :as string]))
+              [fruits.map.api         :as map]
+              [fruits.string.api      :as string]
+              [io.api                 :as io]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
