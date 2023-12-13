@@ -9,7 +9,7 @@
 ;; ----------------------------------------------------------------------------
 
 (defn update-git-dependency-url!
-  ; @warning
+  ; @important
   ; This function replaces the first occurence of the actual git URL of the dependency in the 'deps.edn' file!
   ;
   ; @description
@@ -39,7 +39,7 @@
                          (throw (Exception. (str "Unable to update 'deps.edn' file in directory: '" directory-path "'"))))))))
 
 (defn update-git-dependency-commit-sha!
-  ; @warning
+  ; @important
   ; This function replaces the first occurence of the actual git commit SHA of the dependency in the 'deps.edn' file!
   ;
   ; @description
@@ -69,7 +69,7 @@
                          (throw (Exception. (str "Unable to update 'deps.edn' file in directory: '" directory-path "'"))))))))
 
 (defn update-git-dependency-coordinates!
-  ; @warning
+  ; @important
   ; This function replaces the first occurence of the actual git URL and git commit SHA of the dependency in the 'deps.edn' file!
   ;
   ; @description
