@@ -18,7 +18,7 @@ Check out the latest commit on the [release branch](https://github.com/monotech-
 
 ### Documentation
 
-The <strong>clj-deps-edn-handler</strong> functional documentation is [available here](documentation/COVER.md).
+The <strong>clj-deps-edn-handler</strong> functional documentation is [available here](https://mt-devtools.github.io/clj-deps-edn-handler).
 
 ### Changelog
 
