@@ -10,18 +10,19 @@
 
 (defn read-deps-edn
   ; @description
-  ; Returns the content (as a Clojure map) of the 'deps.edn' file found in the given directory path.
+  ; Returns the content (as a Clojure map) of the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
   ;
   ; @usage
   ; (read-deps-edn)
+  ; =>
+  ; {:paths ["src"]
+  ;  :deps {author/my-repository {:git/url "https://github.com/author/my-repository"
+  ;                               :sha     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}}}
   ;
   ; @usage
   ; (read-deps-edn "my-directory")
-  ;
-  ; @example
-  ; (read-deps-edn)
   ; =>
   ; {:paths ["src"]
   ;  :deps {author/my-repository {:git/url "https://github.com/author/my-repository"
@@ -36,19 +37,19 @@
 
 (defn get-git-dependency-coordinates
   ; @description
-  ; Returns the GIT coordinates of a dependency in the 'deps.edn' file found in the given directory path.
+  ; Returns the GIT coordinates of a dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
   ; @param (string) repository-name
   ;
   ; @usage
   ; (get-git-dependency-coordinates "author/my-repository")
+  ; =>
+  ; {:git/url "https://github.com/author/my-repository"
+  ;  :sha     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
   ;
   ; @usage
   ; (get-git-dependency-coordinates "my-directory" "author/my-repository")
-  ;
-  ; @example
-  ; (get-git-dependency-coordinates "author/my-repository")
   ; =>
   ; {:git/url "https://github.com/author/my-repository"
   ;  :sha     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
@@ -66,19 +67,18 @@
 
 (defn get-git-dependency-url
   ; @description
-  ; Returns the GIT URL of a dependency in the 'deps.edn' file found in the given directory path.
+  ; Returns the GIT URL of a dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
   ; @param (string) repository-name
   ;
   ; @usage
   ; (get-git-dependency-url "author/my-repository")
+  ; =>
+  ; "https://github.com/author/my-repository"
   ;
   ; @usage
   ; (get-git-dependency-url "my-directory" "author/my-repository")
-  ;
-  ; @example
-  ; (get-git-dependency-url "author/my-repository")
   ; =>
   ; "https://github.com/author/my-repository"
   ;
@@ -91,19 +91,18 @@
 
 (defn get-git-dependency-commit-sha
   ; @description
-  ; Returns the GIT commit SHA of a dependency in the 'deps.edn' file found in the given directory path.
+  ; Returns the GIT commit SHA of a dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
   ; @param (string) repository-name
   ;
   ; @usage
   ; (get-git-dependency-commit-sha "author/my-repository")
+  ; =>
+  ; "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   ;
   ; @usage
   ; (get-git-dependency-commit-sha "my-directory" "author/my-repository")
-  ;
-  ; @example
-  ; (get-git-dependency-commit-sha "author/my-repository")
   ; =>
   ; "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   ;

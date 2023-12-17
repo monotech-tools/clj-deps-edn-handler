@@ -13,7 +13,7 @@
   ; This function replaces the first occurence of the actual git URL of the dependency in the 'deps.edn' file!
   ;
   ; @description
-  ; Updates the GIT URL of a dependency in the 'deps.edn' file in the given directory path.
+  ; Updates the GIT URL of a dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
   ; @param (string) repository-name
@@ -43,7 +43,7 @@
   ; This function replaces the first occurence of the actual git commit SHA of the dependency in the 'deps.edn' file!
   ;
   ; @description
-  ; Updates the GIT commit SHA of a dependency in the 'deps.edn' file in the given directory path.
+  ; Updates the GIT commit SHA of a dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
   ; @param (string) repository-name
@@ -73,7 +73,7 @@
   ; This function replaces the first occurence of the actual git URL and git commit SHA of the dependency in the 'deps.edn' file!
   ;
   ; @description
-  ; Updates the GIT coordinates of a dependency in the 'deps.edn' file in the given directory path.
+  ; Updates the GIT coordinates of a dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
   ; @param (string) repository-name
