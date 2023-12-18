@@ -9,7 +9,7 @@ The <strong>clj-deps-edn-handler</strong> is a simple deps.edn file handler for 
 
 ```
 {:deps {mt-devtools/clj-deps-edn-handler {:git/url "https://github.com/mt-devtools/clj-deps-edn-handler"
-                                          :sha     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}}
+                                          :sha     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}}}
 ```
 
 ### Current version
