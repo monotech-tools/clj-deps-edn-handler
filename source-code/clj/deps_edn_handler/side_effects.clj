@@ -11,6 +11,7 @@
 (defn update-git-dependency-url!
   ; @important
   ; This function replaces the first occurence of the actual git URL of the dependency in the 'deps.edn' file!
+  ; Duplicated occurence of the git URL value may cause incorrect output!
   ;
   ; @description
   ; Updates the GIT URL of a dependency in the 'deps.edn' file found in the directory at the given directory path.
@@ -41,6 +42,7 @@
 (defn update-git-dependency-commit-sha!
   ; @important
   ; This function replaces the first occurence of the actual git commit SHA of the dependency in the 'deps.edn' file!
+  ; Duplicated occurence of the git commit SHA value may cause incorrect output!
   ;
   ; @description
   ; Updates the GIT commit SHA of a dependency in the 'deps.edn' file found in the directory at the given directory path.
@@ -71,6 +73,7 @@
 (defn update-git-dependency-coordinates!
   ; @important
   ; This function replaces the first occurence of the actual git URL and git commit SHA of the dependency in the 'deps.edn' file!
+  ; Duplicated occurence of the git URL and the git commit SHA values may cause incorrect output!
   ;
   ; @description
   ; Updates the GIT coordinates of a dependency in the 'deps.edn' file found in the directory at the given directory path.
