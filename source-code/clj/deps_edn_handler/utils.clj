@@ -12,5 +12,5 @@
   ;
   ; @return (string)
   [directory-path]
-  (-> directory-path (string/ends-with!       "/deps.edn")
-                     (string/not-starts-with! "/")))
+  (-> directory-path (string/end-with "/deps.edn")
+                     (string/not-start-with "/")))
