@@ -13,6 +13,7 @@
   ; Returns the content (as a Clojure map) of the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
+  ; Default: "."
   ;
   ; @usage
   ; (read-deps-edn)
@@ -37,9 +38,10 @@
 
 (defn get-git-dependency-coordinates
   ; @description
-  ; Returns the GIT coordinates of a dependency in the 'deps.edn' file found in the directory at the given directory path.
+  ; Returns the GIT coordinates of a specific dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
+  ; Default: "."
   ; @param (string) repository-name
   ;
   ; @usage
@@ -58,7 +60,7 @@
   ; {:git/url (string)
   ;  :sha (string)}
   ([repository]
-   (get-git-dependency-coordinates "" repository))
+   (get-git-dependency-coordinates "." repository))
 
   ([directory-path repository-name]
    (letfn [(f0 [[%1 %2]] (if (= %1 (symbol repository-name)) %2))
@@ -67,9 +69,10 @@
 
 (defn get-git-dependency-url
   ; @description
-  ; Returns the GIT URL of a dependency in the 'deps.edn' file found in the directory at the given directory path.
+  ; Returns the GIT URL of a specific dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
+  ; Default: "."
   ; @param (string) repository-name
   ;
   ; @usage
@@ -84,16 +87,17 @@
   ;
   ; @return (string)
   ([repository-name]
-   (get-git-dependency-url "" repository-name))
+   (get-git-dependency-url "." repository-name))
 
   ([directory-path repository-name]
    (:git/url (get-git-dependency-coordinates directory-path repository-name))))
 
 (defn get-git-dependency-commit-sha
   ; @description
-  ; Returns the GIT commit SHA of a dependency in the 'deps.edn' file found in the directory at the given directory path.
+  ; Returns the GIT commit SHA of a specific dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
+  ; Default: "."
   ; @param (string) repository-name
   ;
   ; @usage
@@ -108,7 +112,7 @@
   ;
   ; @return (string)
   ([repository-name]
-   (get-git-dependency-commit-sha "" repository-name))
+   (get-git-dependency-commit-sha "." repository-name))
 
   ([directory-path repository-name]
    (:sha (get-git-dependency-coordinates directory-path repository-name))))

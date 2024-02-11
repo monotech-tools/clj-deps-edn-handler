@@ -14,9 +14,10 @@
   ; Duplicated occurence of the git URL value may cause incorrect output!
   ;
   ; @description
-  ; Updates the GIT URL of a dependency in the 'deps.edn' file found in the directory at the given directory path.
+  ; Updates the GIT URL of a specific dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
+  ; Default: "."
   ; @param (string) repository-name
   ; @param (string) git-url
   ;
@@ -28,7 +29,7 @@
   ;
   ; @return (boolean)
   ([repository-name git-url]
-   (update-git-dependency-url! "" repository-name git-url))
+   (update-git-dependency-url! "." repository-name git-url))
 
   ([directory-path repository-name git-url]
    (let [filepath (utils/directory-path->deps-edn-filepath directory-path)]
@@ -45,9 +46,10 @@
   ; Duplicated occurence of the git commit SHA value may cause incorrect output!
   ;
   ; @description
-  ; Updates the GIT commit SHA of a dependency in the 'deps.edn' file found in the directory at the given directory path.
+  ; Updates the GIT commit SHA of a specific dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
+  ; Default: "."
   ; @param (string) repository-name
   ; @param (string) git-commit-sha
   ;
@@ -59,7 +61,7 @@
   ;
   ; @return (boolean)
   ([repository-name git-commit-sha]
-   (update-git-dependency-commit-sha! "" repository-name git-commit-sha))
+   (update-git-dependency-commit-sha! "." repository-name git-commit-sha))
 
   ([directory-path repository-name git-commit-sha]
    (let [filepath (utils/directory-path->deps-edn-filepath directory-path)]
@@ -73,12 +75,13 @@
 (defn update-git-dependency-coordinates!
   ; @important
   ; This function replaces the first occurence of the actual git URL and git commit SHA of the dependency in the 'deps.edn' file!
-  ; Duplicated occurence of the git URL and the git commit SHA values may cause incorrect output!
+  ; Duplicated occurence of the git URL or the git commit SHA values may cause incorrect output!
   ;
   ; @description
-  ; Updates the GIT coordinates of a dependency in the 'deps.edn' file found in the directory at the given directory path.
+  ; Updates the GIT coordinates of a specific dependency in the 'deps.edn' file found in the directory at the given directory path.
   ;
   ; @param (string)(opt) directory-path
+  ; Default: "."
   ; @param (string) repository-name
   ; @param (map) git-coordinates
   ; {:git/url (string)
@@ -97,7 +100,7 @@
   ;
   ; @return (boolean)
   ([repository-name git-coordinates]
-   (update-git-dependency-coordinates! "" repository-name git-coordinates))
+   (update-git-dependency-coordinates! "." repository-name git-coordinates))
 
   ([directory-path repository-name {:git/keys [url] :keys [sha]}]
    (and (update-git-dependency-url!        directory-path repository-name url)
